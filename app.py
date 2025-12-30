@@ -28,15 +28,12 @@ option = st.sidebar.selectbox(
 # -------------------------
 # MEDICAL PREDICTION
 # -------------------------
-# -------------------------
-# MEDICAL PREDICTION
-# -------------------------
 if option == "Medical Prediction":
     st.header("🩺 Medical Risk Prediction (Diabetes Progression)")
 
     @st.cache_resource
     def load_medical_model():
-        return load("diabetes_model.pk1")
+        return load("models/diabetes_model.pk1")
 
     model = load_medical_model()
 
@@ -146,7 +143,7 @@ elif option == "House Price Forecasting":
 
     @st.cache_resource
     def load_house_model():
-        return load("California_house_value_model.pk1")
+        return load("models/California_house_value_model.pk1")
 
     model = load_house_model()
 
